@@ -28,7 +28,7 @@ class Article extends Model
                 Storage::disk('public')->delete($article->thumbnail);
             }
 
-            // Delete attachment if it exists
+            // Delete attachment files if it exists
             if ($article->file && Storage::disk('public')->exists($article->file)) {
                 Storage::disk('public')->delete($article->file);
             }

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Articles\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,8 @@ class ArticleForm
                 ->placeholder("decription of the article")
                 ->minLength(5)
                 ->maxLength(250),
+
+                RichEditor::make('content'),
 
                 FileUpload::make('thumbnail')
                 ->label('Thumbnail')
